@@ -132,7 +132,11 @@ h1,h2,h3,h4{ font-family: var(--serif); margin:0 0 8px; }
 
 .hero-form{
   position:relative;
-  background: var(--panel) url('images/form_bg.jpg') center / cover no-repeat;
+  background-color: var(--panel);
+  background-image: url('images/form_bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius:2px;
   overflow:hidden;
 }
