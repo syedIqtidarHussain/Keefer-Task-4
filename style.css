@@ -133,14 +133,21 @@ h1,h2,h3,h4{ font-family: var(--serif); margin:0 0 8px; }
 .hero-form{
   position:relative;
   background-color: var(--panel);
-  background-image: url('images/form_bg.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
   border-radius:2px;
   overflow:hidden;
 }
+.form-bg-img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+}
 .hero-form-inner{
+  position:relative;
+  z-index:1;
   background: rgba(238,240,242,.93);
   padding:20px 24px;
   height:100%;
