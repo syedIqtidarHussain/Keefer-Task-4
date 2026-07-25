@@ -123,7 +123,7 @@ h1,h2,h3,h4{ font-family: var(--serif); margin:0 0 8px; }
 
 .hero-form{
   position:relative;
-  background: var(--panel) url('assets/form_bg.jpg') center / cover no-repeat;
+  background: var(--panel) url('form_bg.jpg') center / cover no-repeat;
   border-radius:2px;
   overflow:hidden;
 }
