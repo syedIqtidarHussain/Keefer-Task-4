@@ -293,14 +293,14 @@ h1,h2,h3,h4{ font-family: var(--serif); margin:0 0 8px; }
 .section-heading.small{ margin-top:26px; font-size:15px; }
 
 .practice-list{ list-style:none; margin:0; padding:0; }
-.practice-list li{ margin-bottom:10px; }
+.practice-list li{ margin-bottom:8px; }
 .practice-list a{
   display:flex;
   flex-direction:column;
-  gap:14px;
+  gap:8px;
   background: linear-gradient(180deg,#8c8c8c 0%, #7c7c7c 100%);
   border-left: 5px solid #6e1414;
-  padding:16px 18px;
+  padding:10px 14px;
   border-radius:1px;
 }
 .practice-list a:hover{ text-decoration:none; opacity:.92; }
