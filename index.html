@@ -1,1 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keefer Law Firm PLC | DUI, DWI &amp; Reckless Driving Defense</title>
+<style>
+/* ===== Keefer Law Firm — tokens ===== */
+:root{
+  --maroon: #7d131c;
+  --maroon-dark: #5a0d15;
+  --maroon-active: #4a0a10;
+  --red: #a4131c;
+  --charcoal: #333333;
+  --charcoal-light: #555555;
+  --grey: #7a7a7a;
+  --grey-light: #e9e9e9;
+  --panel: #eef0f2;
+  --white: #ffffff;
+  --serif: Georgia, 'Times New Roman', Times, serif;
+  --sans: Arial, Helvetica, sans-serif;
+}
+
+*{ box-sizing: border-box; overflow-wrap:break-word; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: var(--sans);
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.5;
+}
+.wrap{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+img{ max-width:100%; display:block; }
+a{ color: var(--red); text-decoration:none; }
+a:hover{ text-decoration: underline; }
+h1,h2,h3,h4{ font-family: var(--serif); margin:0 0 8px; }
+.txt-black{ color:var(--charcoal); }
+.txt-red{ color:var(--red); }
+
+/* ===== Header ===== */
+.site-header{
+  background: linear-gradient(100deg, #f5f5f5 0%, #e7e7e7 45%, #efefef 100%);
+  border-bottom: 3px solid var(--maroon);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:20px;
+  padding-bottom:16px;
+  flex-wrap:wrap;
+}
+.logo img{ width:270px; height:auto; }
+.header-call{ text-align:right; }
+.call-eyebrow{
+  display:block;
+  color: var(--red);
+  font-weight:bold;
+  font-size:15px;
+  letter-spacing:.5px;
+  margin-bottom:2px;
+}
+.call-number{
+  display:block;
+  color: #1a1a1a;
+  font-size:32px;
+  font-weight:bold;
+  font-family: var(--sans);
+  line-height:1.2;
+}
+.call-number:hover{ text-decoration:none; }
+.call-sub{
+  display:block;
+  color: var(--grey);
+  font-size:13px;
+  margin-top:2px;
+}
+
+/* ===== Nav ===== */
+.main-nav{
+  background: linear-gradient(180deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+}
+.main-nav .wrap{ display:flex; align-items:stretch; }
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  background:none;
+  border:none;
+  padding:12px;
+  cursor:pointer;
+}
+.menu-toggle span{
+  display:block;
+  width:24px;
+  height:3px;
+  background:#fff;
+  border-radius:2px;
+}
+.nav-list{
+  list-style:none;
+  display:flex;
+  margin:0;
+  padding:0;
+  width:100%;
+}
+.nav-list li{ border-right:1px solid rgba(255,255,255,.12); }
+.nav-list li:last-child{ border-right:none; }
+.nav-list li.active{
+  background: var(--maroon-active);
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.35);
+}
+.nav-list a{
+  display:block;
+  padding:16px 26px;
+  color:#fff;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+.nav-list a:hover{
+  background: rgba(255,255,255,.08);
+  text-decoration:none;
+}
+
+/* ===== Hero ===== */
+.hero{
+  display:grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap:24px;
+  margin-top:26px;
+  align-items:stretch;
+  min-width:0;
+}
+.hero > *{ min-width:0; }
+.hero-banner{
+  height:100%;
+  overflow:hidden;
+  border-radius:2px;
+}
+.hero-banner img{ width:100%; height:100%; object-fit:cover; display:block; border-radius:2px; }
+
+.hero-form{
+  display:grid;
+  position:relative;
+  border-radius:2px;
+  overflow:hidden;
+}
+.form-bg-img{
+  grid-area: 1 / 1;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  filter: contrast(1.35) saturate(1.3);
+}
+.hero-form-inner{
+  grid-area: 1 / 1;
+  position:relative;
+  z-index:1;
+  background: rgba(255,255,255,.4);
+  padding:20px 24px;
+  height:100%;
+}
+.form-title{
+  color: var(--red);
+  font-size:28px;
+  font-style: italic;
+  margin-bottom:4px;
+}
+.form-lede{
+  font-family: var(--serif);
+  font-size:19px;
+  color:#1a1a1a;
+  margin:0 0 8px;
+  line-height:1.3;
+}
+.form-copy{
+  font-size:13px;
+  color: var(--charcoal-light);
+  margin-bottom:14px;
+}
+.form-copy strong{ color:#1a1a1a; }
+
+.hero-form form{ display:flex; flex-direction:column; }
+.form-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+  position:relative;
+}
+.form-row label{
+  font-size:12px;
+  font-weight:bold;
+  color:var(--charcoal);
+  width:55px;
+  flex-shrink:0;
+}
+.form-row input{
+  border:1px solid #c9c9c9;
+  border-radius:2px;
+  padding:6px 8px;
+  font-family:var(--sans);
+  font-size:13px;
+  width:150px;
+  background:#fff;
+}
+.confidential-stamp{
+  position:absolute;
+  right:0;
+  top:-6px;
+  width:120px;
+  transform: rotate(-8deg);
+}
+.hero-form textarea{
+  border:1px solid #c9c9c9;
+  border-radius:2px;
+  padding:8px 10px;
+  margin: 6px 0 14px;
+  font-family:var(--sans);
+  font-size:13px;
+  min-height:70px;
+  resize:vertical;
+  background:#fff;
+}
+.form-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.privacy{ font-size:12px; color: var(--charcoal-light); font-style:italic; }
+
+.btn-red{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background: linear-gradient(180deg, var(--red) 0%, #8c0f17 100%);
+  color:#fff;
+  font-weight:bold;
+  text-align:center;
+  padding:11px 18px;
+  border:none;
+  border-radius:2px;
+  cursor:pointer;
+  letter-spacing:.5px;
+  font-size:13px;
+  white-space:nowrap;
+}
+.btn-red img{ width:8px; }
+.btn-red:hover{ background: var(--maroon-dark); text-decoration:none; }
+
+.hr-shadow{ width:100%; height:auto; margin:26px 0; opacity:.6; }
+
+/* ===== CTA Grid ===== */
+.cta-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:30px;
+  min-width:0;
+}
+.cta-grid > *{ min-width:0; }
+.cta-col h3{ font-size:19px; margin-bottom:4px; }
+.cta-strong{ color:var(--red); font-weight:bold; font-size:13px; letter-spacing:.5px; margin:0 0 10px; }
+.cta-col p{ color:var(--grey); font-size:13px; margin:0 0 8px; }
+.cta-flex{ display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+.cta-icon{ width:90px; flex-shrink:0; }
+.btn-red.small{ padding:9px 16px; font-size:12px; margin-top:6px; }
+
+.cta-col-2{ display:flex; flex-direction:column; gap:22px; }
+.cta-box{ border-top:1px solid var(--grey-light); padding-top:16px; }
+.cta-col-2 .cta-box:first-child{ border-top:none; padding-top:0; }
+
+.badges{
+  display:flex;
+  gap:14px;
+  margin-bottom:14px;
+}
+.badges img{ width:75px; }
+.badges img.badge-sm{ width:75px; height:auto; }
+
+/* ===== Main content (3 col) ===== */
+.main-content{
+  display:grid;
+  grid-template-columns: 200px 1fr 210px;
+  gap:36px;
+  margin-top:6px;
+  padding-bottom:40px;
+  min-width:0;
+}
+.main-content > *{ min-width:0; }
+.section-heading{ font-size:17px; letter-spacing:.5px; border-bottom:2px solid var(--grey-light); padding-bottom:10px; margin-bottom:14px; }
+.section-heading.small{ margin-top:26px; font-size:15px; }
+
+.practice-list{ list-style:none; margin:0; padding:0; }
+.practice-list li{ margin-bottom:8px; }
+.practice-list a{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  background: linear-gradient(180deg,#8c8c8c 0%, #7c7c7c 100%);
+  border-left: 5px solid #6e1414;
+  padding:10px 14px;
+  border-radius:1px;
+}
+.practice-list a:hover{ text-decoration:none; opacity:.92; }
+.pa-title{ color:#fff; font-weight:bold; font-size:14px; letter-spacing:.4px; }
+.pa-more{ color:#f2f2f2; font-size:11.5px; font-weight:bold; letter-spacing:.5px; text-align:right; display:flex; align-items:center; gap:6px; justify-content:flex-end; }
+.pa-more img{ width:7px; }
+
+.menu-stub{ list-style:none; margin:0; padding:0; color:#b9b9b9; font-size:13px; }
+.menu-stub li{ padding:4px 0 4px 6px; }
+
+.content-col h1{
+  color:#1a1a1a;
+  font-size:24px;
+  border-bottom:1px solid var(--grey-light);
+  padding-bottom:14px;
+  margin-bottom:16px;
+}
+.content-col p{ color:#555; font-size:14px; line-height:1.7; margin-bottom:16px; }
+
+/* Sidebar */
+.sidebar-block h4{ font-size:16px; line-height:1.25; margin-bottom:6px; overflow-wrap:break-word; }
+.sidebar-block p{ color:var(--grey); font-size:13px; margin:0 0 10px; }
+.lf-shadow{ width:100%; margin:16px 0; opacity:.7; }
+
+.sidebar-badges{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:center;
+  margin:24px 0;
+}
+.sidebar-badges img{ width:110px; }
+
+.follow-us h4{ font-size:15px; letter-spacing:.5px; margin-bottom:10px; }
+.social-icons{ display:flex; gap:8px; }
+.social-icons img{ width:29px; height:29px; }
+
+/* ===== Footer ===== */
+.site-footer{
+  background: linear-gradient(90deg, var(--charcoal) 0%, var(--maroon-dark) 100%);
+  height:18px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .hero{ grid-template-columns:1fr; }
+  .cta-grid{ grid-template-columns:1fr; }
+  .main-content{ grid-template-columns:1fr; }
+  .header-inner{ flex-direction:column; text-align:center; gap:14px; }
+  .call-eyebrow, .call-sub{ text-align:center; }
+  .nav-list{ display:none; flex-direction:column; }
+  .nav-list.open{ display:flex; }
+  .menu-toggle{ display:block; margin-left:auto; }
+  .nav-list li{ border-right:none; border-bottom:1px solid rgba(255,255,255,.1); }
+  .form-row input{ width:100%; }
+  .confidential-stamp{ position:static; transform:none; width:100px; margin-top:6px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#" class="logo">
+      <img src="looo.png" alt="Keefer Law Firm PLC">
+    </a>
+    <div class="header-call">
+      <span class="call-eyebrow">CALL OUR OFFICES NOW!</span>
+      <a href="tel:5404336906" class="call-number">540.433.6906</a>
+      <span class="call-sub">Get Your Questions Answered Fast</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= NAV ================= -->
+<nav class="main-nav">
+  <div class="wrap">
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-list">
+      <li class="active"><a href="#">HOME</a></li>
+      <li><a href="#">BIOGRAPHY</a></li>
+      <li><a href="#">BLOG</a></li>
+      <li><a href="#">AREAS WE SERVE</a></li>
+      <li><a href="#">LIBRARY</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero wrap">
+  <div class="hero-banner">
+    <img src="gurantee_banner.gif" alt="Over 30 Years of Experience Defending DUI, DWI, Reckless Driving &amp; Traffic Tickets">
+  </div>
+
+  <div class="hero-form">
+    <img src="form_bg.jpg" class="form-bg-img" alt="">
+    <div class="hero-form-inner">
+      <h2 class="form-title">QUESTIONS?</h2>
+      <p class="form-lede"><strong>Have a Question<br>About Your Case?</strong></p>
+      <p class="form-copy">Enter your information and get your questions answered
+        quickly and discreetly or call us at: <strong>540.433.6906</strong></p>
+
+      <form>
+        <div class="form-row">
+          <label>NAME:</label>
+          <input type="text" name="name">
+        </div>
+        <div class="form-row">
+          <label>EMAIL:</label>
+          <input type="email" name="email">
+          <img src="confidential.png" class="confidential-stamp" alt="Confidential">
+        </div>
+        <div class="form-row">
+          <label>PHONE:</label>
+          <input type="text" name="phone">
+        </div>
+
+        <textarea placeholder="Tell us about your case here..."></textarea>
+
+        <div class="form-footer">
+          <span class="privacy">100% Privacy Guaranteed</span>
+          <button type="submit" class="btn-red">Ask Us About Your Case <img src="bullet_white.gif" alt=""></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<img src="hr_shadow.png" class="hr-shadow wrap" alt="">
+
+<!-- ================= 3-COLUMN CTA GRID ================= -->
+<section class="cta-grid wrap">
+
+  <div class="cta-col cta-col-1">
+    <h3><span class="txt-black">CHARGED WITH</span> <span class="txt-red">DUI?</span></h3>
+    <p class="cta-strong">FREE CASE EVALUATION</p>
+    <div class="cta-flex">
+      <div>
+        <p>Being charged with a DUI can be scary. Get the help you deserve.</p>
+        <p>Click here to let us know how we can help you with your case.</p>
+      </div>
+      <img src="paste_board.gif" alt="Free Case Evaluation" class="cta-icon">
+    </div>
+    <a href="#" class="btn-red small">CLICK HERE <img src="bullet_white.gif" alt=""></a>
+  </div>
+
+  <div class="cta-col cta-col-2">
+    <div class="cta-box">
+      <h3><span class="txt-black">LAW</span> <span class="txt-red">BLOG</span></h3>
+      <div class="cta-flex">
+        <p>Learn more about Virginia Traffic Laws.</p>
+        <img src="pic1.gif" alt="Law Blog" class="cta-icon">
+      </div>
+      <a href="#" class="btn-red small">CLICK HERE <img src="bullet_white.gif" alt=""></a>
+    </div>
+    <div class="cta-box">
+      <h3><span class="txt-black">CASE</span> <span class="txt-red">RESULTS</span></h3>
+      <div class="cta-flex">
+        <p>See how we help our clients. Read our latest case results.</p>
+        <img src="order_icon.gif" alt="Case Results" class="cta-icon">
+      </div>
+      <a href="#" class="btn-red small">CLICK HERE <img src="bullet_white.gif" alt=""></a>
+    </div>
+  </div>
+
+  <div class="cta-col cta-col-3">
+    <div class="badges">
+      <img src="avo_rating_large.gif" alt="Avvo Rating 10 Superb Top Attorney" class="badge-sm">
+      <img src="national_college_large.gif" alt="National College for DUI Defense General Member" class="badge-sm">
+    </div>
+    <h3><span class="txt-black">CERTIFICATES &amp;</span><br><span class="txt-red">CREDENTIALS</span></h3>
+    <p>Keefer Law Firm has protected the rights of Virginians for over 30 years.</p>
+    <a href="#" class="btn-red small">LEARN MORE <img src="bullet_white.gif" alt=""></a>
+  </div>
+
+</section>
+
+<img src="hr_shadow.png" class="hr-shadow wrap" alt="">
+
+<!-- ================= MAIN CONTENT (3 COLUMNS) ================= -->
+<section class="main-content wrap">
+
+  <!-- LEFT: Practice Areas -->
+  <aside class="col-practice">
+    <h3 class="section-heading"><span class="txt-black">PRACTICE</span> <span class="txt-red">AREAS</span></h3>
+    <ul class="practice-list">
+      <li>
+        <a href="#">
+          <span class="pa-title">DUI &amp; DWI</span>
+          <span class="pa-more">LEARN MORE <img src="bullet_red.gif" alt=""></span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="pa-title">RECKLESS DRIVING</span>
+          <span class="pa-more">LEARN MORE <img src="bullet_red.gif" alt=""></span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="pa-title">SPEEDING TICKETS</span>
+          <span class="pa-more">LEARN MORE <img src="bullet_red.gif" alt=""></span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="pa-title">TRAFFIC VIOLATIONS</span>
+          <span class="pa-more">LEARN MORE <img src="bullet_red.gif" alt=""></span>
+        </a>
+      </li>
+    </ul>
+
+    <h3 class="section-heading small"><span class="txt-black">LEARN MORE</span> <span class="txt-red">ABOUT</span></h3>
+    <ul class="menu-stub">
+      <li>MENU</li>
+      <li>AREA</li>
+      <li>HERE</li>
+    </ul>
+  </aside>
+
+  <!-- CENTER: Page content -->
+  <div class="content-col">
+    <h1>&lt;H1&gt;PAGE TITLE HERE</h1>
+    <p>Asunt in anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. <span class="txt-red">Excepteur</span> sint occaecat cupidatat non proident, sunt in anim id est laborum. Allamco laboris
+      nisi ut aliquip ex ea commodo consequat. Aser velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in anim id est laborum. Asunt in anim uis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in anim id est laborum. Allamco laboris nisi ut aliquip ex ea
+      commodo consequat. Aser velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in anim id est laborum.</p>
+  </div>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-block">
+      <h4><span class="txt-black">CLIENT</span><br><span class="txt-red">TESTIMONIALS</span></h4>
+      <p>Read what others say about Keefer Law Firm.</p>
+      <a href="#" class="btn-red small">CLICK HERE <img src="bullet_white.gif" alt=""></a>
+    </div>
+    <img src="lf_bt_hr_shadow.png" class="lf-shadow" alt="">
+
+    <div class="sidebar-block">
+      <h4><span class="txt-black">DOWNLOAD</span><br><span class="txt-red">FREE REPORTS</span></h4>
+      <p>Discover the truth about Virginia Law.</p>
+      <a href="#" class="btn-red small">CLICK HERE <img src="bullet_white.gif" alt=""></a>
+    </div>
+    <img src="lf_bt_hr_shadow.png" class="lf-shadow" alt="">
+
+    <div class="sidebar-block">
+      <h4><span class="txt-black">CONTACT</span> <span class="txt-red">OUR<br>OFFICES</span></h4>
+      <p>Get your questions answered right now.</p>
+      <a href="#" class="btn-red small">CLICK HERE <img src="bullet_white.gif" alt=""></a>
+    </div>
+
+    <div class="sidebar-badges">
+      <img src="avo_rating_large.gif" alt="Avvo Rating 10 Superb Top Attorney">
+      <img src="national_college_large.gif" alt="National College for DUI Defense General Member">
+    </div>
+
+    <div class="follow-us">
+      <h4><span class="txt-black">FOLLOW</span> <span class="txt-red">US</span></h4>
+      <div class="social-icons">
+        <a href="#"><img src="fb_icon.gif" alt="Facebook"></a>
+        <a href="#"><img src="google_icon.gif" alt="Google Plus"></a>
+        <a href="#"><img src="twitter_icon.gif" alt="Twitter"></a>
+        <a href="#"><img src="linked_icon.gif" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </aside>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer"></footer>
+
+<script>
+document.querySelector('.menu-toggle').addEventListener('click', function(){
+  document.querySelector('.nav-list').classList.toggle('open');
+});
+</script>
+</body>
+</html>
 
