@@ -109,120 +109,130 @@ body {
     display: block;
 }
 
-/* Hero Right Form Box */
+/* Hero Right Form Container */
 .hero-right {
     flex: 1;
-    background: url("images/form_bg.jpg") no-repeat center top;
+    background: #e5e5e5 url("images/form_bg.jpg") no-repeat center top;
     background-size: cover;
     border: 1px solid #c0c0c0;
-    position: relative;
-    padding: 12px 14px 8px 14px;
+    padding: 8px 10px 8px 10px;
     display: flex;
     flex-direction: column;
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
 }
 
-/* Confidential Stamp Top Right */
-.confidential-stamp {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    border: 2px solid #8b0000;
-    color: #8b0000;
-    font-size: 0.62rem;
-    font-weight: 900;
-    padding: 2px 6px;
-    letter-spacing: 1px;
-    transform: rotate(-4deg);
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 2;
-}
-
-/* Form Top Header */
-.form-header {
+/* Header Row */
+.form-header-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 6px;
 }
 
-.q-title {
-    background: #a80000;
+.q-banner {
+    background: linear-gradient(to bottom, #a00000 0%, #700000 100%);
     color: #fff;
     font-weight: 900;
     font-size: 0.85rem;
-    padding: 4px 6px;
+    padding: 4px 8px;
     letter-spacing: 0.5px;
-    border-radius: 2px;
+    border-radius: 1px;
 }
 
-.q-sub {
-    font-size: 0.72rem;
-    color: #444;
-    line-height: 1.1;
+.q-heading {
+    font-size: 0.78rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.15;
 }
 
-.q-sub strong {
+.q-heading .blue-txt {
     color: #003366;
+    font-size: 0.85rem;
 }
 
-/* Form Sub Text */
+/* Sub-instruction Text */
 .form-instruction {
     font-size: 0.62rem;
-    color: #555;
+    color: #444;
     line-height: 1.25;
     margin-bottom: 8px;
-    max-width: 82%;
 }
 
-.form-instruction strong {
+.form-instruction .red-num {
     color: #8b0000;
+    font-weight: bold;
 }
 
-/* Form Alignment & Field Length Controls */
-.question-form {
-    width: 100%;
+/* Inputs & Stamp Area */
+.form-middle-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
 }
 
-.form-fields-container {
-    width: 82%; 
-    margin-left: auto;
+.inputs-left {
+    width: 62%;
 }
 
 .form-row {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     margin-bottom: 3px;
 }
 
 .form-row label {
-    font-size: 0.65rem;
+    width: 48px;
+    font-size: 0.6rem;
     font-weight: bold;
-    color: #333;
-    margin-right: 6px;
+    color: #444;
+    text-align: right;
+    margin-right: 5px;
 }
 
 .form-row input {
-    width: 70%;
+    flex: 1;
     height: 18px;
-    padding: 2px 4px;
-    border: 1px solid #aaa;
+    padding: 1px 4px;
+    border: 1px solid #999;
     background: #fff;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
 }
 
-.form-row.text-row {
+/* Confidential Stamp Right Side Placement */
+.stamp-wrapper {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2px;
+}
+
+.confidential-stamp {
+    border: 2px solid #a00000;
+    color: #a00000;
+    font-size: 0.7rem;
+    font-weight: 900;
+    padding: 3px 6px;
+    letter-spacing: 1px;
+    transform: rotate(-7deg);
+    background: rgba(255, 255, 255, 0.7);
+    white-space: nowrap;
+}
+
+/* Textarea & Footer */
+.form-row.textarea-row {
     margin-top: 4px;
-    justify-content: stretch;
 }
 
 .form-row textarea {
     width: 100%;
     height: 48px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     background: #fff;
-    padding: 5px;
-    font-size: 0.72rem;
+    padding: 4px;
+    font-size: 0.7rem;
     resize: none;
 }
 
@@ -230,14 +240,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 6px;
+    margin-top: 5px;
 }
 
 .guarantee-text {
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     color: #555;
     font-style: italic;
-    font-weight: bold;
 }
 
 /* Buttons */
