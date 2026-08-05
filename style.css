@@ -33,12 +33,6 @@ body {
     max-height: 75px;
     width: auto;
     display: block;
-    object-fit: contain;
-}
-
-.logo-container,
-.call-container {
-    flex: 0 0 auto;
 }
 
 .call-container {
@@ -49,7 +43,6 @@ body {
 }
 
 .call-title {
-    display: inline-block;
     color: #8b0000;
     font-weight: bold;
     font-size: 0.85rem;
@@ -58,17 +51,14 @@ body {
 }
 
 .call-number {
-    display: block;
     color: #2b2b2b;
     font-size: 2.2rem;
     font-weight: 900;
     line-height: 0.95;
     margin: 1px 0;
-    letter-spacing: -0.5px;
 }
 
 .call-sub {
-    display: block;
     color: #555;
     font-size: 0.75rem;
 }
@@ -94,7 +84,6 @@ body {
     font-weight: bold;
     font-size: 0.75rem;
     padding: 7px 14px;
-    letter-spacing: 0.3px;
 }
 
 .nav-links li.active a,
@@ -102,7 +91,7 @@ body {
     background: linear-gradient(to bottom, #500000 0%, #300000 100%);
 }
 
-/* Hero Section & Form Box Fix */
+/* Hero Section */
 .hero-section {
     display: flex;
     justify-content: space-between;
@@ -111,8 +100,7 @@ body {
 }
 
 .hero-left {
-    flex: 1.15;
-    min-width: 0;
+    flex: 1.2;
 }
 
 .hero-banner-img {
@@ -121,70 +109,57 @@ body {
     display: block;
 }
 
-/* Question Section Box with Actual Image */
+/* Fixed Form Background and Overlay Alignment */
 .hero-right {
     flex: 1;
-    min-width: 0;
     background: url("images/form_bg.jpg") no-repeat center top;
-    background-size: 100% 100%;
-    border: 1px solid #b5b5b5;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background-size: cover;
+    border: 1px solid #c0c0c0;
     position: relative;
-    border-radius: 2px;
+    padding: 95px 12px 12px 12px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-.form-overlay-content {
-    padding: 75px 12px 10px 12px;
-}
-
 .question-form {
-    position: relative;
-}
-
-.form-inputs-group {
-    position: relative;
-    z-index: 1;
+    width: 100%;
 }
 
 .form-row {
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
-/* Increased font size for labels and inputs */
 .form-row label {
-    width: 60px;
-    flex-shrink: 0;
-    font-size: 0.75rem;
+    width: 55px;
+    font-size: 0.72rem;
     font-weight: bold;
     color: #333;
+    flex-shrink: 0;
 }
 
 .form-row input {
-    width: 175px;
-    height: 23px;
+    flex: 1;
+    height: 22px;
     padding: 2px 6px;
-    border: 1px solid #a6a6a6;
+    border: 1px solid #aaa;
     background: #fff;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
 }
 
 .form-row.text-row {
-    margin-top: 6px;
-    width: 100%;
+    margin-top: 4px;
 }
 
 .form-row textarea {
     width: 100%;
-    height: 55px;
-    border: 1px solid #a6a6a6;
+    height: 60px;
+    border: 1px solid #aaa;
     background: #fff;
-    padding: 5px;
-    font-size: 0.78rem;
+    padding: 6px;
+    font-size: 0.8rem;
     resize: none;
 }
 
@@ -196,18 +171,19 @@ body {
 }
 
 .guarantee-text {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     color: #555;
-    font-weight: 600;
+    font-style: italic;
+    font-weight: bold;
 }
 
-/* Red Buttons */
+/* Buttons */
 .btn-red {
-    background: linear-gradient(to bottom, #bd0000 0%, #7d0000 100%);
+    background: linear-gradient(to bottom, #bc0000 0%, #7a0000 100%);
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    border: 1px solid #500;
+    border: 1px solid #4a0000;
     border-radius: 2px;
     padding: 4px 10px;
     cursor: pointer;
@@ -217,6 +193,11 @@ body {
 
 .btn-red:hover {
     background: linear-gradient(to bottom, #d60000 0%, #940000 100%);
+}
+
+.form-btn {
+    font-size: 0.7rem;
+    padding: 4px 8px;
 }
 
 .sm-btn {
@@ -235,7 +216,6 @@ body {
 
 .feature-col {
     flex: 1;
-    min-width: 0;
 }
 
 .feature-col:not(:last-child) {
@@ -349,7 +329,6 @@ body {
 
 .content-center {
     flex: 1;
-    min-width: 0;
 }
 
 .side-title {
@@ -381,7 +360,6 @@ body {
     border-radius: 2px;
     border: 1px solid #333;
     border-left: 5px solid #8b0000;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .practice-menu li a span {
@@ -407,30 +385,36 @@ body {
     color: #8b0000;
 }
 
-/* Lower Left Menu Color & Style Fix */
+/* Bottom Left Menu Correct Light Color & Bullet Style */
 .custom-bullet-menu {
     list-style: none;
     margin-top: 6px;
-    padding-left: 2px;
+    padding-left: 0;
 }
 
 .custom-bullet-menu li {
-    background: url("images/bullet_red.gif") no-repeat left center;
-    padding-left: 14px;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-bullet-menu li::before {
+    content: "■";
+    color: #8b0000;
+    font-size: 0.6rem;
+    margin-right: 6px;
 }
 
 .custom-bullet-menu li a {
-    color: #786b8b;
+    color: #8c7f9e;
     font-weight: bold;
     font-size: 0.78rem;
     text-decoration: none;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.4px;
 }
 
 .custom-bullet-menu li a:hover {
     color: #8b0000;
-    text-decoration: underline;
 }
 
 .page-h1 {
@@ -517,16 +501,4 @@ body {
     height: 14px;
     background: linear-gradient(to bottom, #8a0000 0%, #4a0000 100%);
     border-top: 1px solid #a00000;
-}
-
-@media screen and (max-width: 900px) {
-    .site-wrapper {
-        width: 100%;
-    }
-    .hero-section, .middle-features, .main-body {
-        flex-direction: column;
-    }
-    .sidebar-left, .sidebar-right {
-        width: 100%;
-    }
 }
